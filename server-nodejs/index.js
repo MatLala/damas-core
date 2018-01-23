@@ -27,6 +27,10 @@ app.use( bodyParser.json({limit: '50mb', strict: false}));
 var morgan = require('morgan');
 app.use(morgan('dev'));
 
+var cors = require('cors');
+app.use(cors());
+app.options('*', cors());
+
 /*
  * Extensions
  */
