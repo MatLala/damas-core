@@ -1,0 +1,4 @@
+#ignore file to not include .git repos, node_modules, dev environment folders or similar stuff unnecessary for production
+**/.git
+**/node_modules
+**/.vscode
