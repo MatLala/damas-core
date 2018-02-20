@@ -10,7 +10,10 @@
   },
   "scripts": {
     "test": "mocha -w tests",
-    "start": "node index.js"
+    "start": "node index.js",
+    "dev": "(python update_conf.py localhost) & (npm run start)",
+    "docked": "(python update_conf.py mongo) & (npm run start)"
+    
   },
   "author": "Remy Lalanne <remy@primcode.com> http://primcode.com",
   "license": "GPL v3",

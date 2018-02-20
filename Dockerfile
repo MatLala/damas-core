@@ -22,4 +22,4 @@ HEALTHCHECK --interval=5m --timeout=3s `
   
 # Run the server when the container launches; args can be overridden by docker run
 ENTRYPOINT ["npm"]
-CMD ["run","start"]
+CMD ["run","docked"]
