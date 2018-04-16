@@ -28,7 +28,7 @@ module.exports = function (conf) {
         }
         var conf = self.conf;
         var server = new mongo.Server(conf.host, conf.port, conf.options);
-        var db = new mongo.Db(conf.collection, server);
+        var db = new mongo.Db(conf.database, server);
         db.open(function (err, connection) {
             if (err) {
                 self.debug('Unable to connect to the MongoDB database');
@@ -36,6 +36,7 @@ module.exports = function (conf) {
                 return;
             }
             self.debug('Connected to the database');
+            self.database = conf.database;
             self.conn = connection;
             self.collection = conf.collection;
             callback(false, self.conn);
@@ -53,7 +54,7 @@ module.exports = function (conf) {
                 route(true);
                 return;
             }
-            self.conn.collection(self.collection, function (err, coll) {
+            self.conn.db(self.database).collection(self.collection, function (err, coll) {
                 if (err || !coll) {
                     self.debug('Error: unable to load the collection');
                     route(true);

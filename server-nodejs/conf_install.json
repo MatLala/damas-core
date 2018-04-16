@@ -8,6 +8,7 @@
     "db": "mongodb",
     "mongodb": {
         "host": "localhost",
+        "database": "node",
         "collection": "node",
         "port": 27017,
         "options": { "auto_reconnect": true }
