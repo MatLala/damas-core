@@ -70,7 +70,7 @@ var socket = require('./events/socket');
 /*
  * Create a HTTP server
  */
-var http_port = process.env.HTTP_PORT || 8090;
+var http_port = process.env.HTTP_PORT || 8080;
 debug('Creating HTTP server on port %s', http_port);
 var http = require('http').createServer(app).listen(http_port, function () {
     debug('HTTP server listening on port %s', http_port);
